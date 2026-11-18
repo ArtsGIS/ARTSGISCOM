@@ -92,21 +92,35 @@ h2{font-size:1.45rem;margin:2.2rem 0 .8rem;padding-bottom:.35rem;border-bottom:3
 .placeholder{border:2px dashed var(--orange);border-radius:var(--rayon);padding:1.2rem 1.4rem;background:repeating-linear-gradient(45deg,rgba(224,102,42,.04) 0 12px,transparent 12px 24px)}
 .placeholder-tag{display:inline-block;margin:0 0 .4rem;background:var(--orange);color:#fff;font-weight:700;font-size:.75rem;padding:.1rem .6rem;border-radius:4px;letter-spacing:.08em}
 
-/* Cartes AGOL */
-.carte-bloc{background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);box-shadow:var(--ombre);overflow:hidden}
-.note-acces{margin:0;padding:.6rem 1rem;background:rgba(30,111,184,.1);font-size:.92rem;border-bottom:1px solid var(--bordure)}
-.onglets{display:flex;gap:0;border-bottom:1px solid var(--bordure);overflow-x:auto}
-.onglets button{background:none;border:none;border-bottom:3px solid transparent;padding:.7rem 1.1rem;font:inherit;font-weight:600;color:var(--gris);cursor:pointer;white-space:nowrap}
-.onglets button[aria-selected="true"]{color:var(--titre);border-bottom-color:var(--orange)}
-.carte-cadre{position:relative;height:min(72vh,640px);background:linear-gradient(135deg,rgba(10,47,92,.08),rgba(30,111,184,.05))}
-.carte-cadre iframe{width:100%;height:100%;border:0;display:block}
-.carte-attente{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.6rem;padding:1rem}
-.bouton{display:inline-block;background:var(--bleu);color:#fff;border:none;border-radius:8px;padding:.6rem 1.1rem;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+/* Applications AGOL — encarts visibles, liens en dur */
+.note-acces{margin:0 0 1rem;padding:.7rem 1rem;background:rgba(30,111,184,.1);border:1px solid var(--bordure);border-radius:var(--rayon);font-size:.92rem}
+.bouton{display:inline-block;background:var(--bleu);color:#fff;border:none;border-radius:8px;padding:.7rem 1.2rem;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;text-align:center}
 .bouton:hover{background:var(--bleu-nuit);color:#fff}
 .bouton-sec{background:transparent;color:var(--lien);border:1px solid var(--bleu)}
 .bouton-sec:hover{background:var(--bleu);color:#fff}
-.carte-outils{position:absolute;right:.6rem;top:.6rem;z-index:2}
-.carte-outils a{background:rgba(10,47,92,.85);color:#fff;font-size:.8rem;padding:.3rem .6rem;border-radius:6px;text-decoration:none}
+.applis{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1rem 0 1.2rem}
+.appli{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--bordure);border-top:5px solid var(--bleu);border-radius:var(--rayon);padding:1.15rem 1.25rem 1.2rem;box-shadow:var(--ombre)}
+.appli-experience{border-top-color:var(--bleu)}
+.appli-dashboard{border-top-color:var(--bleu-nuit)}
+.appli-webmap{border-top-color:var(--orange)}
+.appli-type{margin:0;color:var(--orange);text-transform:uppercase;font-weight:700;font-size:.75rem;letter-spacing:.08em}
+.appli h3{margin:.3rem 0 .45rem;font-size:1.2rem}
+.appli p{margin:0 0 1rem}
+.appli-actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:.55rem;align-items:center}
+.appli-apercu{margin-top:1rem;border-top:1px solid var(--bordure);padding-top:.75rem}
+.appli-apercu summary{cursor:pointer;font-weight:700;color:var(--lien);list-style:none}
+.appli-apercu summary::-webkit-details-marker{display:none}
+.appli-apercu summary::before{content:"▸ ";color:var(--orange)}
+.appli-apercu[open] summary::before{content:"▾ "}
+.carte-cadre{position:relative;height:480px;margin-top:.8rem;border:1px solid var(--bordure);border-radius:8px;overflow:hidden;background:linear-gradient(135deg,rgba(10,47,92,.08),rgba(30,111,184,.05))}
+.carte-cadre iframe{width:100%;height:100%;border:0;display:block}
+.applis-recap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+.appli-recap{background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);padding:1rem 1.15rem 1.15rem;box-shadow:var(--ombre)}
+.appli-recap h3{margin:.2rem 0 .7rem;font-size:1.2rem}
+.appli-recap-liste{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.75rem}
+.appli-recap-liste li{display:flex;flex-direction:column;align-items:flex-start;gap:.25rem}
+.appli-recap-libelle{color:var(--gris);font-size:.9rem}
+.appli-recap-vide p{margin:0}
 
 /* Dépôts */
 .depot{background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);padding:.6rem 1.2rem}
