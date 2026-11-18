@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr" data-theme="clair">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>geogenealogie · ARTSGIS</title>
+  <meta name="description" content="Expérimentation ArtsGIS × Grok Bot × ArcGIS Online — geogenealogie">
+  <link rel="icon" href="assets/img/artsgis_logo.png">
+  <link rel="stylesheet" href="assets/css/artsgiscom.css">
+  <script>try{var t=localStorage.getItem('artsgiscom_theme');if(t)document.documentElement.dataset.theme=t;}catch(_){}</script>
+  <script src="assets/js/artsgiscom.js" defer></script>
+</head>
+<body class="page-geogenealogie">
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+  <div class="bandeau-v1" role="note">V1 de navigation · brouillon privé, non publié · contenus et chiffres à arbitrer en V2</div>
+  <header class="entete">
+    <div class="entete-int">
+      <a class="marque" href="index.html">
+        <img src="assets/img/artsgis_logo.png" alt="Logo ARTSGIS" width="44" height="44">
+        <span class="marque-txt"><strong>ARTSGIS · geogenealogie</strong><small>Géogénéalogie · naissances et décès</small></span>
+      </a>
+      <div class="entete-actions">
+        <button class="bouton-theme" type="button" aria-label="Basculer le thème clair / sombre" title="Thème clair / sombre"><span aria-hidden="true">◐</span></button>
+        <button class="bouton-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="artsgiscom_ukrainefront.html">ukrainefront</a></li>
+        <li><a href="artsgiscom_normandieveille.html">normandieveille</a></li>
+        <li><a href="artsgiscom_havreportcyber.html">havreportcyber</a></li>
+        <li><a href="artsgiscom_axeseineevent.html">axeseineevent</a></li>
+        <li><a href="artsgiscom_geogenealogie.html" aria-current="page">geogenealogie</a></li>
+        <li><a href="artsgiscom_methode.html">Méthode</a></li>
+        <li><a href="artsgiscom_credits.html">Crédits</a></li>
+        <li><a href="artsgiscom_liens.html">Liens</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="contenu" class="contenu">
+    <section class="hero">
+      <p class="kicker">Bot · géogénéalogie</p>
+      <h1>geogenealogie</h1>
+      <p class="chapo">Géolocaliser les naissances et décès de l’arbre généalogique de Mathieu LARUE sur ArcGIS Online. Les lieux inconnus vont en « réserve de points » dans l’estuaire de la Seine, organisée en arbre d’ascendance.</p>
+    </section>
+    <nav class="ancres" aria-label="Sur cette page">
+      <a href="#methode">Méthode</a><a href="#resultats">Résultats</a><a href="#applications">Applications et tableaux de bord</a><a href="#journaux">Journaux et dépôts</a>
+    </nav>
+    <section id="methode">
+      <h2>Méthode</h2>
+      <ul>
+        <li>Chaque naissance, décès ou résidence est un événement ponctuel. Les lieux connus sont géocodés à la commune, par code INSEE, via l’API Géo (<code>geo.api.gouv.fr</code>), au centroïde. Les résidences, quand elles existent, passent par l’API Adresse (<code>api-adresse.data.gouv.fr</code>), au niveau de la rue, sans numéro.</li>
+        <li>Le géocodeur Esri n’est pas utilisé : aucun crédit de géocodage Esri n’est consommé.</li>
+        <li>Sans lieu fiable, les points vont dans une « réserve » située dans l’estuaire de la Seine, organisée en arbre d’ascendance (générations alignées, branches regroupées). Une personne a une position unique ; naissance et décès en réserve sont légèrement décalés. Un lien qui touche un point de réserve n’a pas de signification géographique : ce nœud est un artifice de cartographie, pas un lieu de vie.</li>
+        <li>Les événements sont publiés dans un service d’entités hébergé, en trois couches : les points (événements), les parcours de vie (lignes en tireté) et les liens de filiation (lignes pleines).</li>
+        <li>Sur la carte, la forme distingue le type d’événement (rond : naissance, losange : décès, carré : résidence) ; la couleur suit la branche. Les points en réserve se distinguent des lieux réels et restent filtrables.</li>
+        <li>Pour les personnes vivantes, les fenêtres contextuelles n’affichent que l’année, jamais une date complète. Aucun numéro de rue n’est stocké.</li>
+        <li>Le principe retenu pour les communes historiques ou fusionnées est de s’appuyer sur le COG historique ; cette brique n’est pas encore en place dans les scripts.</li>
+        <li>Cette page ne publie aucune donnée personnelle : pas de noms, pas de dates, pas de lieux précis, pas de captures.</li>
+      </ul>
+    </section>
+    <section id="resultats">
+      <h2>Résultats</h2>
+      <ul>
+        <li><strong>31 personnes</strong>, <strong>53 événements</strong> (31 naissances, 18 décès, 4 résidences).</li>
+        <li>9 événements (17&nbsp;%) ont un lieu réel : 5 au centroïde de commune, 4 au niveau de la rue. 44 événements (83&nbsp;%) sont en réserve, soit 29 personnes.</li>
+        <li>21 lignes de parcours de vie, 29 lignes de filiation. Aucune distance de migration ou de filiation n’est interprétable tant qu’il n’existe pas de liens entièrement réels entre deux lieux distincts.</li>
+      </ul>
+      <p class="meta">Chiffres agrégés uniquement, issus du dépôt privé ArtsGIS/GEOGENEALOGIE_p (commit 2b8a924) et du document méthodologique ARTSGIS du 18/11/2026. Aucun nom, date ou lieu précis n’est reproduit ici. La carte raconte surtout, pour l’instant, un arbre en réserve.</p>
+    </section>
+    <section id="applications">
+      <h2>Applications et tableaux de bord</h2>
+    <p class="note-acces"><span aria-hidden="true">🔒</span> Ces applications restent réservées aux comptes autorisés pour l’instant — se connecter à artsgis.maps.arcgis.com. Le partage ArcGIS Online n’a pas été modifié. Si l’aperçu intégré reste vide, utiliser le bouton d’ouverture.</p>
+    <div class="applis">
+      <article class="appli appli-experience">
+        <p class="appli-type">Experience · ArcGIS Online</p>
+        <h3>Experience geogenealogie</h3>
+        <p>Application Experience Builder de la géolocalisation des naissances et décès.</p>
+        <div class="appli-actions">
+          <a class="bouton" href="https://experience.arcgis.com/experience/0704446af6bd41fb915a3baaafc2a79b/" target="_blank" rel="noopener">Ouvrir l’application</a>
+        </div>
+        <details class="appli-apercu">
+          <summary>Afficher l’aperçu intégré</summary>
+          <div class="carte-cadre">
+            <iframe src="https://experience.arcgis.com/experience/0704446af6bd41fb915a3baaafc2a79b/" title="Experience geogenealogie" loading="lazy" allow="fullscreen; geolocation" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </details>
+      </article>
+      <article class="appli appli-dashboard">
+        <p class="appli-type">Tableau de bord · ArcGIS Online</p>
+        <h3>Tableau de bord geogenealogie</h3>
+        <p>Tableau de bord de travail des événements, avec indicateurs, graphiques et filtres (dont lieu réel ou réserve).</p>
+        <div class="appli-actions">
+          <a class="bouton" href="https://artsgis.maps.arcgis.com/apps/dashboards/af04d8deb93e4279a6d5908617d1fb33" target="_blank" rel="noopener">Ouvrir le tableau de bord</a>
+        </div>
+        <details class="appli-apercu">
+          <summary>Afficher l’aperçu intégré</summary>
+          <div class="carte-cadre">
+            <iframe src="https://artsgis.maps.arcgis.com/apps/dashboards/af04d8deb93e4279a6d5908617d1fb33" title="Tableau de bord geogenealogie" loading="lazy" allow="fullscreen; geolocation" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </details>
+      </article>
+      <article class="appli appli-webmap">
+        <p class="appli-type">Carte · ArcGIS Online</p>
+        <h3>Carte geogenealogie</h3>
+        <p>Carte web ArcGIS Online des naissances, décès et réserve de l’estuaire de la Seine.</p>
+        <div class="appli-actions">
+          <a class="bouton" href="https://artsgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=93a058400dea4a37926cfb6f0d80bf00" target="_blank" rel="noopener">Ouvrir la carte</a>
+        </div>
+        <details class="appli-apercu">
+          <summary>Afficher l’aperçu intégré</summary>
+          <div class="carte-cadre">
+            <iframe src="https://artsgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=93a058400dea4a37926cfb6f0d80bf00" title="Carte geogenealogie" loading="lazy" allow="fullscreen; geolocation" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </details>
+      </article>
+    </div>
+    </section>
+    <section id="journaux">
+      <h2>Journaux et dépôts</h2>
+    <div class="depot">
+      <p><a href="https://github.com/ArtsGIS/GEOGENEALOGIE_p" target="_blank" rel="noopener">ArtsGIS/GEOGENEALOGIE_p</a> <span class="badge-prive">privé, accès restreint</span></p>
+      <p class="meta">Journaux et notes de travail (noms seuls) :</p>
+      <ul class="liste-fichiers"><li><code>README.md</code></li><li><code>output/analyse_donnees.md</code></li></ul>
+      <p class="meta">Dépôt public jumeau (sans <code>_p</code>) : pas encore créé. Extraits publiables à préparer en V2.</p>
+    </div>
+    </section>
+  </main>
+  <footer class="pied">
+    <p>ARTSGIS – Mathieu LARUE · données : ArtsGIS, API Géo (geo.api.gouv.fr), API Adresse — données personnelles non publiées · mise à jour : 18/11/2026</p>
+    <p class="pied-liens"><a href="artsgiscom_methode.html">Méthode</a> · <a href="artsgiscom_credits.html">Crédits</a> · <a href="artsgiscom_liens.html">Liens</a> · Voix : ArtsGISbot, assistant Grok Bot</p>
+  </footer>
+</body>
+</html>

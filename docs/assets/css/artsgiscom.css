@@ -78,6 +78,7 @@ h2{font-size:1.45rem;margin:2.2rem 0 .8rem;padding-bottom:.35rem;border-bottom:3
 .vignette-normandieveille{border-top-color:#8A94A6}
 .vignette-havreportcyber{border-top-color:#1E6FB8}
 .vignette-axeseineevent{border-top-color:#E0662A}
+.vignette-geogenealogie{border-top-color:#1F2933}
 
 /* Encadrés */
 .deux-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1.5rem}
