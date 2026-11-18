@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr" data-theme="clair">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ukrainefront · ARTSGIS</title>
+  <meta name="description" content="Expérimentation ArtsGIS × Grok Bot × ArcGIS Online — ukrainefront">
+  <link rel="icon" href="assets/img/artsgis_logo.png">
+  <link rel="stylesheet" href="assets/css/artsgiscom.css">
+  <script>try{var t=localStorage.getItem('artsgiscom_theme');if(t)document.documentElement.dataset.theme=t;}catch(_){}</script>
+  <script src="assets/js/artsgiscom.js" defer></script>
+</head>
+<body class="page-ukrainefront">
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+  <div class="bandeau-v1" role="note">V1 de navigation · brouillon privé, non publié · contenus et chiffres à arbitrer en V2</div>
+  <header class="entete">
+    <div class="entete-int">
+      <a class="marque" href="index.html">
+        <img src="assets/img/artsgis_logo.png" alt="Logo ARTSGIS" width="44" height="44">
+        <span class="marque-txt"><strong>ARTSGIS · ukrainefront</strong><small>Front ukrainien · tracé et veille</small></span>
+      </a>
+      <div class="entete-actions">
+        <button class="bouton-theme" type="button" aria-label="Basculer le thème clair / sombre" title="Thème clair / sombre"><span aria-hidden="true">◐</span></button>
+        <button class="bouton-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="artsgiscom_ukrainefront.html" aria-current="page">ukrainefront</a></li>
+        <li><a href="artsgiscom_normandieveille.html">normandieveille</a></li>
+        <li><a href="artsgiscom_havreportcyber.html">havreportcyber</a></li>
+        <li><a href="artsgiscom_axeseineevent.html">axeseineevent</a></li>
+        <li><a href="artsgiscom_methode.html">Méthode</a></li>
+        <li><a href="artsgiscom_credits.html">Crédits</a></li>
+        <li><a href="artsgiscom_liens.html">Liens</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="contenu" class="contenu">
+    <section class="hero">
+      <p class="kicker">Bot de veille · front ukrainien</p>
+      <h1>ukrainefront</h1>
+      <p class="chapo">Le tracé publié est celui d’<strong>ukrainefront</strong> : la ligne évolue selon sa veille et ses arbitrages, sous le pilotage de Mathieu LARUE, géographe. Ce n’est ni une « situation de la semaine » chiffrée maison, ni une carte DeepState mise à jour à leur nom.</p>
+    </section>
+    <nav class="ancres" aria-label="Sur cette page">
+      <a href="#methode">Méthode</a><a href="#resultats">Résultats accessibles</a><a href="#journaux">Journaux et dépôts</a>
+    </nav>
+    <section id="methode">
+      <h2>Méthode</h2>
+      <ul>
+        <li>Une polyligne initiale, puis des évolutions arbitrées à partir de la veille (points de veille sourcés, statut « à vérifier » tant qu’ils ne sont pas confirmés).</li>
+        <li>DeepStateMap n’est crédité <strong>que</strong> pour la polyligne initiale. Leur responsabilité n’est pas engagée au-delà.</li>
+        <li>Pas de couche dérivée via l’API DeepState sans autorisation écrite ; pas de carte BBC géoréférencée (un lien vers un article, sans logo, est possible) ; pas de carte ISW modifiée sans accord écrit.</li>
+        <li>Pas de commentaire d’actualité militaire, pas de chiffres de situation sur cette page.</li>
+      </ul>
+      <div class="legende-imposee">
+        <p class="legende-titre">Légende imposée</p>
+        <p>Front initial : DeepStateMap.live, situation au 10/11/2026</p>
+        <p>Évolutions : interprétation ARTSGIS</p>
+      </div>
+    </section>
+    <section id="resultats">
+      <h2>Résultats accessibles</h2>
+    <div class="placeholder" role="note">
+      <p class="placeholder-tag">PLACEHOLDER</p>
+      <p>Carte ukrainefront : <strong>sujet en retravail</strong> (pause demandée par Mathieu le 18/11/2026). Aucune carte intégrée en V1. La condition de première publication — un tracé qui a déjà évolué depuis la polyligne du 10/11/2026 — reste à valider avec la reprise du sujet.</p>
+    </div>
+    </section>
+    <section id="journaux">
+      <h2>Journaux et dépôts</h2>
+    <div class="depot">
+      <p><a href="https://github.com/ArtsGIS/UKRAINEFRONT_p" target="_blank" rel="noopener">ArtsGIS/UKRAINEFRONT_p</a> <span class="badge-prive">privé, accès restreint</span></p>
+      <p class="meta">Journaux et notes de travail (noms seuls) :</p>
+      <ul class="liste-fichiers"><li><code>journal/2026-11-12.md</code></li><li><code>journal/2026-11-13.md</code></li><li><code>journal/2026-11-17.md</code></li><li><code>journal/2026-11-18.md</code></li></ul>
+      <p class="meta">Dépôt public jumeau (sans <code>_p</code>) : pas encore créé. Extraits publiables à préparer en V2.</p>
+    </div>
+    </section>
+  </main>
+  <footer class="pied">
+    <p>ARTSGIS – Mathieu LARUE · données : Front initial : DeepStateMap.live, situation au 10/11/2026 · Évolutions : interprétation ARTSGIS · mise à jour : 18/11/2026</p>
+    <p class="pied-liens"><a href="artsgiscom_methode.html">Méthode</a> · <a href="artsgiscom_credits.html">Crédits</a> · <a href="artsgiscom_liens.html">Liens</a> · Voix : ArtsGISbot, assistant Grok Bot</p>
+  </footer>
+</body>
+</html>

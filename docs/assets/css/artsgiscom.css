@@ -1,0 +1,137 @@
+/* ARTSGIS · artsgiscom — feuille de style du mini-site (charte ARTSGIS v3.1) */
+:root{
+  --bleu-nuit:#0A2F5C; --bleu:#1E6FB8; --orange:#E0662A;
+  --fond:#F5F6F8; --texte:#1F2933; --gris:#8A94A6;
+  --surface:#FFFFFF; --bordure:#DDE2EA; --entete:#0A2F5C; --entete-txt:#FFFFFF;
+  --titre:#0A2F5C; --lien:#1E6FB8; --ombre:0 2px 10px rgba(10,47,92,.08);
+  --police:"Avenir Next","Avenir","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --rayon:10px; --largeur:1120px;
+}
+[data-theme="sombre"]{
+  --fond:#0F1B2D; --texte:#E6EAF0; --gris:#8A94A6; --surface:#16263D; --bordure:#24395A;
+  --entete:#0A2F5C; --titre:#FFFFFF; --lien:#6FAEE8; --ombre:0 2px 12px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--police);background:var(--fond);color:var(--texte);line-height:1.6;font-size:17px;transition:background .2s,color .2s}
+a{color:var(--lien)} a:hover{color:var(--orange)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:rgba(138,148,166,.15);padding:.05em .35em;border-radius:4px}
+h1,h2,h3{color:var(--titre);font-weight:700;line-height:1.25}
+h2{font-size:1.45rem;margin:2.2rem 0 .8rem;padding-bottom:.35rem;border-bottom:3px solid var(--orange);display:inline-block}
+.evitement{position:absolute;left:-999px;top:0;background:var(--orange);color:#fff;padding:.5rem 1rem;z-index:100}
+.evitement:focus{left:0}
+.bandeau-v1{background:var(--orange);color:#fff;text-align:center;font-size:.82rem;font-weight:600;padding:.3rem 1rem;letter-spacing:.02em}
+
+/* En-tête */
+.entete{background:var(--entete);color:var(--entete-txt);position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.entete-int{max-width:var(--largeur);margin:0 auto;padding:.6rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.marque{display:flex;align-items:center;gap:.75rem;color:#fff;text-decoration:none}
+.marque:hover{color:#fff}
+.marque img{border-radius:50%;background:#fff;padding:2px}
+.marque-txt{display:flex;flex-direction:column;line-height:1.2}
+.marque-txt strong{font-size:1.1rem;letter-spacing:.03em}
+.marque-txt small{color:#B9C6D8;font-size:.8rem}
+.entete-actions{display:flex;gap:.5rem;align-items:center}
+.bouton-theme,.bouton-menu{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:8px;height:38px;min-width:38px;cursor:pointer;font-size:1.1rem}
+.bouton-theme:hover,.bouton-menu:hover{border-color:var(--orange)}
+.bouton-menu{display:none;flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0 9px}
+.bouton-menu span{display:block;width:18px;height:2px;background:#fff;transition:transform .2s,opacity .2s}
+.bouton-menu[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.bouton-menu[aria-expanded="true"] span:nth-child(2){opacity:0}
+.bouton-menu[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.menu{background:rgba(0,0,0,.15)}
+.menu ul{max-width:var(--largeur);margin:0 auto;padding:0 1.2rem;list-style:none;display:flex;flex-wrap:wrap;gap:.2rem}
+.menu a{display:block;color:#DCE5F0;text-decoration:none;padding:.55rem .8rem;font-size:.93rem;font-weight:500;border-bottom:3px solid transparent}
+.menu a:hover{color:#fff;border-bottom-color:var(--bleu)}
+.menu a[aria-current="page"]{color:#fff;border-bottom-color:var(--orange);font-weight:700}
+@media (max-width:860px){
+  .bouton-menu{display:flex}
+  .menu{display:none}
+  .menu.ouvert{display:block}
+  .menu ul{flex-direction:column;padding:.3rem 1.2rem .8rem}
+  .menu a{border-bottom:none;border-left:3px solid transparent}
+  .menu a[aria-current="page"]{border-left-color:var(--orange)}
+  .marque-txt small{display:none}
+}
+
+/* Contenu */
+.contenu{max-width:var(--largeur);margin:0 auto;padding:1.5rem 1.2rem 3rem}
+.hero{padding:2rem 0 .5rem}
+.kicker{color:var(--orange);text-transform:uppercase;font-weight:700;font-size:.8rem;letter-spacing:.08em;margin:0}
+.hero h1{font-size:clamp(1.8rem,4vw,2.7rem);margin:.3rem 0 .8rem}
+.chapo{font-size:1.12rem;max-width:62ch;margin:0}
+.meta{color:var(--gris);font-size:.9rem}
+.todo{color:var(--orange);font-weight:600;font-size:.92em}
+.ancres{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 0}
+.ancres a{background:var(--surface);border:1px solid var(--bordure);border-radius:999px;padding:.3rem .9rem;text-decoration:none;font-size:.9rem;font-weight:600}
+
+/* Vignettes */
+.vignettes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.vignette{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--bordure);border-top:5px solid var(--bleu);border-radius:var(--rayon);padding:1.1rem 1.2rem;text-decoration:none;color:var(--texte);box-shadow:var(--ombre);transition:transform .15s,box-shadow .15s}
+.vignette:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(10,47,92,.16);color:var(--texte)}
+.vignette h3{margin:.4rem 0 .1rem;font-size:1.25rem}
+.vignette p{margin:.3rem 0}
+.vignette-sujet{color:var(--gris);font-size:.88rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.vignette-etat{align-self:flex-start;font-size:.72rem;font-weight:700;text-transform:uppercase;background:rgba(224,102,42,.12);color:var(--orange);padding:.15rem .55rem;border-radius:999px}
+.vignette-lien{margin-top:auto;padding-top:.6rem;color:var(--lien);font-weight:700}
+.vignette-ukrainefront{border-top-color:#0A2F5C}
+.vignette-normandieveille{border-top-color:#8A94A6}
+.vignette-havreportcyber{border-top-color:#1E6FB8}
+.vignette-axeseineevent{border-top-color:#E0662A}
+
+/* Encadrés */
+.deux-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1.5rem}
+.encadre{background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);padding:.4rem 1.3rem 1rem;box-shadow:var(--ombre)}
+.encadre h2{font-size:1.2rem;margin-top:1rem}
+.encadre-alerte{border-left:5px solid var(--orange)}
+.regles li{margin:.35rem 0}
+.legende-imposee{background:var(--surface);border:1px solid var(--bordure);border-left:5px solid var(--bleu-nuit);border-radius:var(--rayon);padding:.8rem 1.2rem;margin:1rem 0;max-width:640px}
+[data-theme="sombre"] .legende-imposee{border-left-color:var(--bleu)}
+.legende-imposee p{margin:.15rem 0;font-weight:600}
+.legende-imposee .legende-titre{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gris)}
+.placeholder{border:2px dashed var(--orange);border-radius:var(--rayon);padding:1.2rem 1.4rem;background:repeating-linear-gradient(45deg,rgba(224,102,42,.04) 0 12px,transparent 12px 24px)}
+.placeholder-tag{display:inline-block;margin:0 0 .4rem;background:var(--orange);color:#fff;font-weight:700;font-size:.75rem;padding:.1rem .6rem;border-radius:4px;letter-spacing:.08em}
+
+/* Cartes AGOL */
+.carte-bloc{background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);box-shadow:var(--ombre);overflow:hidden}
+.note-acces{margin:0;padding:.6rem 1rem;background:rgba(30,111,184,.1);font-size:.92rem;border-bottom:1px solid var(--bordure)}
+.onglets{display:flex;gap:0;border-bottom:1px solid var(--bordure);overflow-x:auto}
+.onglets button{background:none;border:none;border-bottom:3px solid transparent;padding:.7rem 1.1rem;font:inherit;font-weight:600;color:var(--gris);cursor:pointer;white-space:nowrap}
+.onglets button[aria-selected="true"]{color:var(--titre);border-bottom-color:var(--orange)}
+.carte-cadre{position:relative;height:min(72vh,640px);background:linear-gradient(135deg,rgba(10,47,92,.08),rgba(30,111,184,.05))}
+.carte-cadre iframe{width:100%;height:100%;border:0;display:block}
+.carte-attente{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.6rem;padding:1rem}
+.bouton{display:inline-block;background:var(--bleu);color:#fff;border:none;border-radius:8px;padding:.6rem 1.1rem;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.bouton:hover{background:var(--bleu-nuit);color:#fff}
+.bouton-sec{background:transparent;color:var(--lien);border:1px solid var(--bleu)}
+.bouton-sec:hover{background:var(--bleu);color:#fff}
+.carte-outils{position:absolute;right:.6rem;top:.6rem;z-index:2}
+.carte-outils a{background:rgba(10,47,92,.85);color:#fff;font-size:.8rem;padding:.3rem .6rem;border-radius:6px;text-decoration:none}
+
+/* Dépôts */
+.depot{background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);padding:.6rem 1.2rem}
+.badge-prive{display:inline-block;background:#8A94A6;color:#fff;font-size:.75rem;font-weight:700;padding:.1rem .55rem;border-radius:999px;margin-left:.3rem;vertical-align:middle}
+.liste-fichiers{margin:.2rem 0 .6rem}
+
+/* Axe Seine, méthode */
+.enjeux{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:1rem 0 .3rem}
+.enjeu{background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);padding:.8rem 1rem;font-weight:700;color:var(--titre);display:flex;align-items:center;gap:.7rem}
+.enjeu span{background:var(--orange);color:#fff;width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.9rem;flex:none}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.role{background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);padding:.2rem 1.1rem .6rem;border-top:4px solid var(--bleu)}
+.role-humain{border-top-color:var(--orange)}
+.role h3{margin:.8rem 0 .2rem}
+.rituel{list-style:none;padding:0;counter-reset:r;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
+.rituel li{counter-increment:r;background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);padding:.9rem 1rem;display:flex;flex-direction:column}
+.rituel li::before{content:counter(r);color:var(--orange);font-weight:800;font-size:1.5rem;line-height:1}
+.rituel span{color:var(--gris);font-size:.9rem}
+.liens-boutons{display:flex;flex-direction:column;gap:.6rem;max-width:520px}
+.lien-bouton{display:block;background:var(--surface);border:1px solid var(--bordure);border-radius:var(--rayon);padding:.8rem 1.1rem;font-weight:700;text-decoration:none;box-shadow:var(--ombre)}
+.lien-inactif{color:var(--gris)}
+
+/* Pied */
+.pied{background:var(--bleu-nuit);color:#C9D4E3;font-size:.88rem;padding:1.2rem;text-align:center}
+.pied p{margin:.25rem auto;max-width:var(--largeur)}
+.pied a{color:#fff}
+.pied a:hover{color:var(--orange)}
+@media print{.entete,.bandeau-v1,.bouton-theme{display:none}}
