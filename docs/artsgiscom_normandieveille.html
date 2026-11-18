@@ -18,7 +18,7 @@
     <div class="entete-int">
       <a class="marque" href="index.html">
         <img src="assets/img/artsgis_logo.png" alt="Logo ARTSGIS" width="44" height="44">
-        <span class="marque-txt"><strong>ARTSGIS · normandieveille</strong><small>Veille territoriale · méthode</small></span>
+        <span class="marque-txt"><strong>ARTSGIS · normandieveille</strong><small>Veille territoriale · sources ouvertes</small></span>
       </a>
       <div class="entete-actions">
         <button class="bouton-theme" type="button" aria-label="Basculer le thème clair / sombre" title="Thème clair / sombre"><span aria-hidden="true">◐</span></button>
@@ -42,7 +42,7 @@
     <section class="hero">
       <p class="kicker">Bot de veille · Basse-Normandie et Nord-Bretagne</p>
       <h1>normandieveille</h1>
-      <p class="chapo">Veille OSINT territoriale, sourcée, tracée, géographique, sur la Basse-Normandie et le Nord-Bretagne, en année préélectorale. Pilotage : Mathieu LARUE, géographe. <strong>Cette page documente uniquement la méthode.</strong></p>
+      <p class="chapo">Veille OSINT territoriale, sourcée, tracée, géographique, sur la Basse-Normandie et le Nord-Bretagne, en année préélectorale. Pilotage : Mathieu LARUE, géographe.</p>
     </section>
     <nav class="ancres" aria-label="Sur cette page">
       <a href="#methode">Méthode</a><a href="#applications">Applications et tableaux de bord</a><a href="#journaux">Journaux et dépôts</a>
@@ -61,10 +61,51 @@
     </section>
     <section id="applications">
       <h2>Applications et tableaux de bord</h2>
-      <div class="placeholder" role="note">
-        <p class="placeholder-tag">MÉTHODE SEULEMENT</p>
-        <p>Aucune carte, aucune application ni aucun tableau de bord n’est intégré sur cette page, <strong>par choix</strong>. Le corpus et les applications de travail restent privés. Cette page documente uniquement la méthode.</p>
-      </div>
+    <p class="note-acces"><span aria-hidden="true">🔒</span> Ces applications restent réservées aux comptes autorisés pour l’instant — se connecter à artsgis.maps.arcgis.com. Le partage ArcGIS Online n’a pas été modifié. Si l’aperçu intégré reste vide, utiliser le bouton d’ouverture.</p>
+    <div class="applis">
+      <article class="appli appli-experience">
+        <p class="appli-type">Experience · ArcGIS Online</p>
+        <h3>Experience normandieveille</h3>
+        <p>Application Experience Builder de la veille territoriale normandieveille.</p>
+        <div class="appli-actions">
+          <a class="bouton" href="https://experience.arcgis.com/experience/c14f4731954f40d680a6d0725c6454c5/" target="_blank" rel="noopener">Ouvrir l’application</a>
+        </div>
+        <details class="appli-apercu">
+          <summary>Afficher l’aperçu intégré</summary>
+          <div class="carte-cadre">
+            <iframe src="https://experience.arcgis.com/experience/c14f4731954f40d680a6d0725c6454c5/" title="Experience normandieveille" loading="lazy" allow="fullscreen; geolocation" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </details>
+      </article>
+      <article class="appli appli-dashboard">
+        <p class="appli-type">Tableau de bord · ArcGIS Online</p>
+        <h3>Tableau de bord normandieveille</h3>
+        <p>Tableau de bord de travail des événements, permanences et mobilisations.</p>
+        <div class="appli-actions">
+          <a class="bouton" href="https://artsgis.maps.arcgis.com/apps/dashboards/89d07a145ecb442fbd2319ba6449deba" target="_blank" rel="noopener">Ouvrir le tableau de bord</a>
+        </div>
+        <details class="appli-apercu">
+          <summary>Afficher l’aperçu intégré</summary>
+          <div class="carte-cadre">
+            <iframe src="https://artsgis.maps.arcgis.com/apps/dashboards/89d07a145ecb442fbd2319ba6449deba" title="Tableau de bord normandieveille" loading="lazy" allow="fullscreen; geolocation" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </details>
+      </article>
+      <article class="appli appli-webmap">
+        <p class="appli-type">Carte · ArcGIS Online</p>
+        <h3>Carte normandieveille</h3>
+        <p>Carte web ArcGIS Online de la veille territoriale normandieveille.</p>
+        <div class="appli-actions">
+          <a class="bouton" href="https://artsgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=6c9c5b149bc2445a90ea4f4abfd4e3c1" target="_blank" rel="noopener">Ouvrir la carte</a>
+        </div>
+        <details class="appli-apercu">
+          <summary>Afficher l’aperçu intégré</summary>
+          <div class="carte-cadre">
+            <iframe src="https://artsgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=6c9c5b149bc2445a90ea4f4abfd4e3c1" title="Carte normandieveille" loading="lazy" allow="fullscreen; geolocation" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </details>
+      </article>
+    </div>
     </section>
     <section id="journaux">
       <h2>Journaux et dépôts</h2>
@@ -77,7 +118,7 @@
     </section>
   </main>
   <footer class="pied">
-    <p>ARTSGIS – Mathieu LARUE · données : sources ouvertes (méthode seulement) · mise à jour : 18/11/2026</p>
+    <p>ARTSGIS – Mathieu LARUE · données : sources ouvertes, ArcGIS Online (Esri) · mise à jour : 18/11/2026</p>
     <p class="pied-liens"><a href="artsgiscom_methode.html">Méthode</a> · <a href="artsgiscom_credits.html">Crédits</a> · <a href="artsgiscom_liens.html">Liens</a> · Voix : ArtsGISbot, assistant Grok Bot</p>
   </footer>
 </body>
