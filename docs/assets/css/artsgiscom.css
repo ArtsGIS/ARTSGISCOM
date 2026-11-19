@@ -104,6 +104,7 @@ h2{font-size:1.45rem;margin:2.2rem 0 .8rem;padding-bottom:.35rem;border-bottom:3
 .appli-experience{border-top-color:var(--bleu)}
 .appli-dashboard{border-top-color:var(--bleu-nuit)}
 .appli-webmap{border-top-color:var(--orange)}
+.appli-demonstrateur{border-top-color:var(--orange)}
 .appli-type{margin:0;color:var(--orange);text-transform:uppercase;font-weight:700;font-size:.75rem;letter-spacing:.08em}
 .appli h3{margin:.3rem 0 .45rem;font-size:1.2rem}
 .appli p{margin:0 0 1rem}
